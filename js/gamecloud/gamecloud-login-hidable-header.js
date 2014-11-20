@@ -1,17 +1,26 @@
 /**
- * Created by Janne on 10.11.2014.
+ * Created by Janne on 20.11.2014.
  */
+
+var loginViewCollapsed = false;
 
 $(document).ready(function() {
 
     // Button functions
     $('#gamecloud-login-button').on('click', Login);
     $('#gamecloud-logout-button').on('click', Logout);
+    $('#gamecloud-switch-view-button').on('click', SwitchLoginCreateAccount);
+    $('#gamecloud-bar-hide-button').on('click', SwitchGamecloudBar);
+    $('#gamecloud-navbar-show-button').on('click', SwitchGamecloudBar);
 
     // Hide the logout
     $('#gamecloud-logged').hide();
 
+    // Hide the create new account
+    $('#gamecloud-create-account').hide();
+
     $('#gamecloud-create-button').on('click', Create);
+
 
 });
 
@@ -23,6 +32,31 @@ function Create() {
     var json = ReadCreateData();
     SendToServer(json, CreateCallback);
 
+}
+
+function SwitchGamecloudBar() {
+    // Toggle the navbar
+    $('#gamecloud-navbar').toggle();
+}
+
+/**
+ * Switches the views between logged and login views
+ * @constructor
+ */
+function SwitchLoginLogout() {
+    // Hide/Unhide the login and account creations
+    $('#gamecloud-logged').toggle();
+    $('#gamecloud-login').toggle();
+}
+
+/**
+ * Switches the views between Login and Create Account
+ * @constructor
+ */
+function SwitchLoginCreateAccount() {
+    // Hide/Unhide the login and account creations
+    $('#gamecloud-create-account').toggle();
+    $('#gamecloud-login').toggle();
 }
 
 /**
