@@ -123,6 +123,7 @@ function startNeverEndingGame (images) {
 	}
 
 	player = new Skier(sprites.skier);
+	console.log("New Skier created!");
 	player.setMapPosition(0, 0);
 	player.setMapPositionTarget(0, -10);
 

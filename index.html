@@ -25,33 +25,77 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <!-- Latest compiled and minified CSS -->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/skifree.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/lib/moment.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="panel panel-default" id="gamecloud-create">
+            <div class="col-md-6">
+                <div class="panel with-nav-tabs panel-default">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Login</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Create Account</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab1default">
+                                <div id="gamecloud-login">
+                                    <input type="text" id="gamecloud-login-username" placeholder="Enter Username" name="username">
+                                    <input type="password" id="gamecloud-login-password" placeholder="Enter Password" name="password">
+                                    <button type="button" id="gamecloud-login-button" class="btn btn-default">Log In</button>
+                                </div>
+
+                                <div id="gamecloud-logged">
+                                    <p>Logged in as:</p>
+                                    <label id="gamecloud-username">username</label>
+                                    <button type="button" id="gamecloud-logout-button" class="btn btn-default">Log Out</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2default">
+                                <div class="panel-body" id="create">
+                                    <input type="text" id="gamecloud-create-username" placeholder="Enter Username">
+                                    <input type="password" id="gamecloud-create-password" placeholder="Enter Password">
+                                    <input type="password" id="gamecloud-create-password2" placeholder="Confirm Password">
+                                    <input type="email" id="gamecloud-create-email" placeholder="Email">
+                                    <button type="button" id="gamecloud-create-button" class="btn btn-default">Create Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Add your site or application content here -->
         <canvas id="skifree-canvas" tabindex="0"></canvas>
-        <a href="https://github.com/basicallydan/skifree.js" target="_blank" title="Fork SkiFree.js on GitHub"><img style="position: absolute; top: 5px; left: 5px; border: 0;" src="skifree-github-banner.png" alt="Fork SkiFree.js on GitHub"></a>
-        <a href="http://www.danielhough.co.uk/blog/skifree-js/" target="_blank" title="A blog post about this game"><img style="position: absolute; top: 28px; left: 5px; border: 0;" src="skifree-blogpost-banner.png" alt="A blog post about this game"></a>
 
+        <script src="js/gamecloud/events.js"></script>
+        <script src="js/gamecloud/config.js"></script>
+        <script src="js/gamecloud/gamecloud-login.js"></script>
+        <script src="js/gamecloud/gamecloud.js"></script>
         <script src="js/vendor/jquery-1.8.3.min.js"></script>
         <script src="js/vendor/sugar-1.3.7.min.js"></script>
         <script src="js/skifree.min.js"></script>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-47378781-1', 'auto');
-          ga('send', 'pageview');
-
-        </script>
     </body>
 </html>
